@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Vertica: Query Execution"
+title: "Vertica: Database Epochs"
 date: 2020-08-28
 categories: [knowledge, vertica]
 tags: [vertica9.x]
