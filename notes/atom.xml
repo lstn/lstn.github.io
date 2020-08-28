@@ -10,8 +10,8 @@ layout: feed
 	<updated>{{ site.time | date_to_xmlschema }}</updated>
 	<id>{{ site.url }}/notes</id>
 	<author>
-		<name>{{ site._my_name }}</name>
-		<email>{{ site._my_email }}</email>
+		<name>{{ site._my.name }}</name>
+		<email>{{ site._my.email }}</email>
 	</author>
 
 	{% for post in site.posts %}
