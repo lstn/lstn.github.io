@@ -31,16 +31,16 @@ categories: [knowledge, vertica, cheatsheet]
 
 ## 4. Date and Time data types
 
-| Data Type                             	| Size                                                       	| Description                              	| NULL Sorting 	|
-|---------------------------------------	|------------------------------------------------------------	|------------------------------------------	|--------------	|
-| DATE                                  	| 8 bytes                                                    	| A month, day, and year                   	| NULLS FIRST  	|
-| TIME                                  	| 8 bytes                                                    	| A time of day without timezone           	| NULLS FIRST  	|
-| TIME WITH TIMEZONE                    	| 8 bytes                                                    	| A time of day with timezone              	| NULLS FIRST  	|
-| TIMESTAMP, DATETIME, or SMALLDATETIME 	| 8 bytes A date and time without timezone                   	| NULLS FIRST                              	|              	|
-| TIMESTAMP WITH TIMEZONE               	| 8 bytes A date and time with timezone                      	| NULLS FIRST                              	|              	|
-| INTERVAL                              	| 8 bytes Measures the difference between two points in time 	| NULLS FIRST                              	|              	|
-| INTERVAL DAY TO SECOND                	| 8 bytes                                                    	| An interval measured in days and seconds 	| NULLS FIRST  	|
-| INTERVAL YEAR TO MONTH                	| 8 bytes                                                    	| An interval measured in years and months 	| NULLS FIRST  	|
+| Data Type                             	| Size             | Description                              	    | NULL Sorting 	|
+|---------------------------------------	|---------  |------------------------------------------------       |--------------	|
+| DATE                                  	| 8 bytes   | A month, day, and year                   	            | NULLS FIRST  	|
+| TIME                                  	| 8 bytes   | A time of day without timezone           	            | NULLS FIRST  	|
+| TIME WITH TIMEZONE                    	| 8 bytes   | A time of day with timezone              	            | NULLS FIRST  	|
+| TIMESTAMP, DATETIME, or SMALLDATETIME 	| 8 bytes   | A date and time without timezone         	            | NULLS FIRST 	|
+| TIMESTAMP WITH TIMEZONE               	| 8 bytes   | A date and time with timezone           	            | NULLS FIRST 	|
+| INTERVAL                              	| 8 bytes   | Measures the difference between two points in time    | NULLS FIRST 	|
+| INTERVAL DAY TO SECOND                	| 8 bytes   | An interval measured in days and seconds 	            | NULLS FIRST  	|
+| INTERVAL YEAR TO MONTH                	| 8 bytes   | An interval measured in years and months 	            | NULLS FIRST  	|
 
 ## 5. Approximate Numeric data types
 
