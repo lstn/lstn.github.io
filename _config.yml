@@ -18,7 +18,7 @@ plugins:
   - jekyll-target-blank
 
 _my:
-  email: lucas@estienne.sh
+  email: lucas+from_personal_site@limaecho.ca
   name: Lucas Estienne
   gh_url: https://github.com/lstn
   linkedin_url: https://www.linkedin.com/in/lucas-estienne/
