@@ -1,12 +1,32 @@
 name: Lucas Estienne
+title: my stuff
 markdown: kramdown
 permalink: /notes/:categories/:year/:month/:title
 url: https://lstn.github.io
-_my_email: lucas@estienne.sh
-_my_name: Lucas Estienne
-_my_gh_url: https://github.com/lstn
-_my_linkedin_url: https://www.linkedin.com/in/lucas-estienne/
+paginate: 1
+baseurl: ""
+
+kramdown:
+    footnote_backlink: "&#10548;"
+
+# Gems
+plugins:
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-target-blank
+
+_my:
+  email: lucas@estienne.sh
+  name: Lucas Estienne
+  gh_url: https://github.com/lstn
+  linkedin_url: https://www.linkedin.com/in/lucas-estienne/
 
 sass:
   sass_dir: _sass
   style: :compressed
+
+author:
+  name: Lucas Estienne
+  #url: https://twitter.com/
+  email: lucas@limaecho.ca
