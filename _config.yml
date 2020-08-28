@@ -1,5 +1,6 @@
 name: Lucas Estienne
 title: my stuff
+window_title: Lucas Estienne's stuff
 markdown: kramdown
 permalink: /notes/:categories/:year/:month/:title
 url: https://lstn.github.io

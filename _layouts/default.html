@@ -17,14 +17,7 @@ layout: compress
           <small>{{ site.tagline }}</small>
         </h3>
 		
-		<!-- Change navigation links here -->
-		<div class="navigation">
-		<ul id="navigation-list">
-      <li><a href="/notes/">notes</a></li>
-      <li><a href="/tags/">tags</a></li>
-      <li><a href="/categories/">categories</a></li>
-		</ul>
-		</div>
+		{% include nav.html %}
 		
       </header>
 
@@ -32,9 +25,8 @@ layout: compress
         {{ content | smartify }}
       </main>
 
-      <footer class="footer">
-        <p><a href="maito:{{ site._my.email }}">email</a> <a href="{{ site._my.gh_url}}">github</a> <a href="{{ site._my.linkedin_url}}">linkedin</a></p>
-      </footer>
+      
+      {% include footer.html %}
     </div>
 
     {% if site.ga_analytics %}
