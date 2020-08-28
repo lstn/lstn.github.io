@@ -3,6 +3,7 @@ layout: post
 title: "Vertica: Query Execution"
 date: 2020-08-28
 categories: [knowledge, vertica]
+tags: [vertica9.x]
 ---
 
 # Vertica: Query Execution
@@ -28,3 +29,7 @@ Plans should be read from the bottom to the top.
 ## Timing a Query
 
 Execution time may be viewed in the console or by turning on query timing in the sql client (`\timing` meta-command).
+
+## Query Profiles
+
+Query profile/performance may be reviewed from the management comnsole using the `Query Execution` or `Query Plan` tabs, or using the SQL keyword `profile` before a query.

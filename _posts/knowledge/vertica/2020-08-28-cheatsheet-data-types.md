@@ -3,7 +3,7 @@ layout: post
 title: "Vertica: Data Types Cheat Sheet"
 date: 2020-08-28
 categories: [knowledge, vertica]
-tags: [cheatsheet]
+tags: [cheatsheet, vertica9.x]
 ---
 
 # Vertica: Data Types Cheatsheet
