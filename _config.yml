@@ -1,6 +1,8 @@
 name: Lucas Estienne
 markdown: kramdown
-permalink: /notes/:year/:month/:day/:title
+permalink: /notes/:categories/:year/:month/:title
 url: https://lstn.github.io
 _my_email: lucas@estienne.sh
 _my_name: Lucas Estienne
+_my_gh_url: https://github.com/lstn
+_my_linkedin_url: https://www.linkedin.com/in/lucas-estienne/
