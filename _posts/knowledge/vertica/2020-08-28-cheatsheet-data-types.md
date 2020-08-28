@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Vertica: Query Execution"
+title: "Vertica: Data Types Cheat Sheet"
 date: 2020-08-28
 categories: [knowledge, vertica, cheatsheet]
 ---
