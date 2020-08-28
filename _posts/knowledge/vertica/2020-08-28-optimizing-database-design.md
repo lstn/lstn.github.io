@@ -27,3 +27,45 @@ There are two design types for using the DBD:
 
 - **Comprehensive Design**: Typically done after your first data load, and compares all of your representative queries to your whole database to determine an initial set of projection designs.
 - **Incremental Design**: Typically only done after a database has been in use for some time, i.e. if you have a new set of common queries, or the amount/type of information stored has changed.
+
+## DBD Configuration Parameters
+
+DBD Configuration parameters are stored in the `CONFIGURATION_PARAMETERS` System Table. It may be queried like so:
+
+```sql
+SELECT parameter_name, default_value, description FROM CONFIGURATION_PARAMETERS WHERE parameter_name ILIKE '%DBD%';
+```
+
+⚠ Vertica recommends that you **do not change** these parameters without consultation with professional services.
+
+If you want the DBD to propose replicated/unsegmented projections as part of the design recommendation, these paramerters come into play:
+
+| Parameter Name                  	| Default Value 	| Description                                                                                                                                                            	|
+|---------------------------------	|---------------	|------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| DBDLargestTableRowCountBoundary 	| 1,000,000     	| Sets the minimum number of rows to define a fact (or "large") table.                                                                                                   	|
+| DBDRepSmallRowCountPct          	| 10%           	| If the table has fewer rows than DBDLargestTableRowCountBoundary, check this percentage. If it has fewer rows than this percentage, recommend a replicated projection. 	|
+| DBDRepLargeRowCountPct          	| 1%            	| If the table has more rows than DBDLargestTableRowCountBoundary, check this percentage. If it has fewer rows than this percentage, recommend a replicated projection.  	|
+
+![DBD Unsegmented Projections Parameters](/assets/images/posts/knowledge/vertica/optimizing-database-design/dbd-unsegmented-params-1.png)
+
+## Projection Design: Encoding
+
+![Projection Design: Encoding](/assets/images/posts/knowledge/vertica/optimizing-database-design/projection-design-encoding-1.png)
+
+| Parameter Name            	| Default Value 	| Description                                                                                                                            	|
+|---------------------------	|---------------	|----------------------------------------------------------------------------------------------------------------------------------------	|
+| DBDEncodingSampleRowPct   	| 0             	| **Percentage of rows** to be sampled for encoding analysis during DBD design. <br/> Default setting: Use **DBDEncodingSampleRowCount** 	|
+| DBDEncodingSampleRowCount 	| 1,000,000     	| **Number of rows** to be sampled for encoding analysis during DBD design.                                                              	|
+
+## Projection Design: Correlation
+
+The column position in queries can effect the execution performance - if there are columns that contain related data, i.e. the relationship between a state and a zipcode, your query can run faster if the related columns are next to each other.
+
+The DBD can take this relationship into account based on your sample queries by enabling correlation analysis.
+
+| Parameter Name               	| Default Value 	| Description                                                                                                                                  	|
+|------------------------------	|---------------	|----------------------------------------------------------------------------------------------------------------------------------------------	|
+| DBDCorrelationSampleRowPct   	| 0             	| **Percentage of rows** to be sampled for correlation analysis during DBD design. <br/> Default setting: Use **DBDCorrelationSampleRowCount** 	|
+| DBDCorrelationSampleRowCount 	| 1,000,000     	| **Number of rows** to be sampled for correlation analysis during DBD design.                                                                 	|
+
+## Projection Design: Skew
