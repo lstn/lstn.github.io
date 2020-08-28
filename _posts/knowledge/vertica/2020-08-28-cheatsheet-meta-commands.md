@@ -2,7 +2,8 @@
 layout: post
 title: "Vertica: Meta-Commands Cheat Sheet"
 date: 2020-08-28
-categories: [knowledge, vertica, cheatsheet]
+categories: [knowledge, vertica]
+tags: [cheatsheet]
 ---
 
 # Vertica: Meta-Commands Cheatsheet
