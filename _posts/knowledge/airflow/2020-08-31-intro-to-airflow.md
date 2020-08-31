@@ -22,12 +22,14 @@ A data pipeline is a set of data processing elements connected in serties. The o
     - Postgres Operator
     - Bash Operator
     - Email Operator
+  
 
 - **DAG - Directed Acyclic Graph** (Protocol/Instructions)
     Describes the order of tasks and what to do if a task is failing.
 
     Example:
     Run Task A, when it is finished, run Task B. If one of the tasks failed, stop the whole process and send me a notification.
+
 
 - **Task** (Specific job)
     Job that is done by an Operator.
@@ -36,12 +38,14 @@ A data pipeline is a set of data processing elements connected in serties. The o
     - Load data from some API using Python Operator
     - Write the data to the database using MySQL Operator
 
+
 - **Connection**
     Credentials to the external systems that can be securely stored in the Airflow.
 
     Example:
     - Postgres Connection = Connection string to the Postgres database
     - AWS Connection = AWS access keys
+
 
 - **Hooks**
     Interfaces to the external platforms and databases. Implements common interface (all hooks look very similar) and use Connections
@@ -51,6 +55,7 @@ A data pipeline is a set of data processing elements connected in serties. The o
     - Slack Hook
     - HDFS Hook
 
+
 - **Variables**
     Like environment variables. Can store arbitrary information and be used in the Tasks
 
@@ -58,8 +63,10 @@ A data pipeline is a set of data processing elements connected in serties. The o
     - Stack Overflow base URL
     - Gmail client ID and Secret
 
+
 - **XComs**
     Lets Tasks exchange *small* messages.
+
 
 ## Quickstart
 
