@@ -69,3 +69,26 @@ The DBD can take this relationship into account based on your sample queries by 
 | DBDCorrelationSampleRowCount 	| 1,000,000     	| **Number of rows** to be sampled for correlation analysis during DBD design.                                                                 	|
 
 ## Projection Design: Skew
+
+When the DBD plans for segmented projections, it attempts to distribute the data evenly across all nodes. This even distribution allows all nodes to participate equally in answering a query. 
+
+Depending on the segmentation clause, this even distribution may not be possible. The data for the projection will not be distributed evenly, so some of the nodes will take longer to respond to a query than others, effecting query performance.
+
+| Parameter Name                 	| Default Value 	| Description                                                                                                                                        	|
+|--------------------------------	|---------------	|----------------------------------------------------------------------------------------------------------------------------------------------------	|
+| DBDSkewDetectionSampleRowPct   	| 0             	| **Percentage of rows** to be sampled for segmentation skew analysis during DBD design. <br/> Default setting: Use **DBDCorrelationSampleRowCount** 	|
+| DBDSkewDetectionSampleRowCount 	| 8000          	| **Number of rows** to be sampled for segmentation skew analysis during DBD design.                                                                 	|
+
+## DBD Operations
+
+We can control:
+
+- Memory used by the DBD process
+- Whether DBD actions are logged
+- Where the resources to run the DBD are drawn from
+
+| Parameter Name                 	| Default Value 	| Description                                                                                                                  	|
+|--------------------------------	|---------------	|------------------------------------------------------------------------------------------------------------------------------	|
+| MaxOptMemMBInDBD               	| 1024          	| Maximum amount of memory used by the Optimizer in the context of DBD                                                         	|
+| DBDLogInternalDesignProcess    	| 0             	| Log Internal DBD design process in Data Collector tables                                                                     	|
+| DBDUseOnlyDesignerResourcePool 	| 0             	| Determines source for resource allocation during a designer invocation<br><br>Default: use the user's assigned resource pool 	|
